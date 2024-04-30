@@ -22,5 +22,13 @@ tools {
             }
       }
    }
+      stage('build docker image'){
+      steps{
+         environment {
+         DOCKER_IMAGE = "ajay/ultimate-cicd:${BUILD_NUMBER}"
+        }
+        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t $DOCKER_IMAGE .'
+}
+}
 }
 }
