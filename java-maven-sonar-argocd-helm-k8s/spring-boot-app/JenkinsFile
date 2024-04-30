@@ -12,7 +12,7 @@ tools {
     }
    stage('build') {
       steps { 
-        sh 'cd jenkinss/java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean install'
+        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean install'
       }
      }
    }
