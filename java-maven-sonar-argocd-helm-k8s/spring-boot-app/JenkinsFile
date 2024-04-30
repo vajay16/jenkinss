@@ -27,7 +27,7 @@ tools {
          DOCKER_IMAGE = "ajay/ultimate-cicd:${BUILD_NUMBER}"
                   }
       steps{
-        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t $DOCKER_IMAGE .'
+        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && sudo docker build -t $DOCKER_IMAGE .'
 }
 }
 }
