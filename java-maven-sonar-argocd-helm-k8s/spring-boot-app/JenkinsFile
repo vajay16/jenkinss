@@ -17,7 +17,9 @@ tools {
      }
      stage('sonarqube analysis') {
       steps { 
-        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean sonar:sonar'
+        withCredentials([string(credentialsId: 'sonarqube', variable: 'sonarqube')]) 
+        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean sonar:sonar -Dsonar.login=$sonarqube '
+            }
       }
    }
 }
