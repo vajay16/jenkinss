@@ -1,5 +1,8 @@
 pipeline {
   agent any 
+tools {
+  maven 'latest'
+  }
   stages {
     stage('Checkout') {
       steps {
